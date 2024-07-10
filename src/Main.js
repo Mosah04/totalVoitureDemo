@@ -6,7 +6,7 @@ const Main = () => {
   const { loggedIn, currentUserDB } = useAuth();
   console.log("LoggedIn", loggedIn);
   if (loggedIn) return <App />;
-  return <div>Bienvenue, veuillez vous connecter</div>;
+  return <div>Bienvenue, veuillez vous connecter!!!!!!!</div>;
 };
 
 export default Main;
