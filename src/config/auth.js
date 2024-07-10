@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
+  getRedirectResult,
   updatePassword,
 } from "firebase/auth";
 
@@ -110,7 +111,21 @@ export const doSignInWithEmailAndPassword = async (email, password) => {
 
 export const doSignInWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
-  const result = await signInWithRedirect(auth, provider);
+  await signInWithRedirect(auth, provider);
+  const result = await getRedirectResult(auth);
+
+  console.log("RESULT", result);
+
+  // async function example() {
+  //   console.log("Avant le blocage");
+
+  //   // Simuler une tâche asynchrone avec une promesse
+  //   await new Promise((resolve) => setTimeout(resolve, 10000)); // Bloquer pendant 2 secondes
+
+  //   console.log("Après le blocage");
+  // }
+
+  // example();
 
   return result;
 };
