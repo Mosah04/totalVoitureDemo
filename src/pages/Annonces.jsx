@@ -1,0 +1,14 @@
+import React from "react";
+import { Outlet } from "react-router-dom";
+const Annonces = () => {
+  return (
+    <section className="flex flex-col gap-4">
+      <h1 className="text-xl text-font-bold font-bold">Annonces</h1>
+      <div className="w-full">
+        <Outlet />
+      </div>
+    </section>
+  );
+};
+
+export default Annonces;
