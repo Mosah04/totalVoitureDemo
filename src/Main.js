@@ -3,9 +3,9 @@ import { useAuth } from "./contexts/authContext";
 import App from "./App";
 
 const Main = () => {
-  const { loggedIn } = useAuth();
+  const { loggedIn, currentUserDB } = useAuth();
   console.log("LoggedIn", loggedIn);
-  if (loggedIn) return <App />;
+  if (loggedIn && currentUserDB) return <App />;
   return <div>Bienvenue, veuillez vous connecter</div>;
 };
 
