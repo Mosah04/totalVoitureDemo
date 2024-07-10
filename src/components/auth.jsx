@@ -121,12 +121,13 @@ function Auth() {
   const onGoogleSignIn = () => {
     if (!isAuthenticating) {
       setIsAuthenticating(true);
-      doSignInWithGoogle().catch(() => {
+      doSignInWithGoogle().catch((e) => {
         setIsAuthenticating(false);
         setErrors({
           ...errors,
           general: "Ouch! Quelque chose s'est mal passé, veuillez réessayer!",
         });
+        console.log("ERROR", e);
       });
     }
   };
